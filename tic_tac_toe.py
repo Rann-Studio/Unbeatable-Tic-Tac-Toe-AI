@@ -26,7 +26,6 @@ def player_move(icon):
 
 def ai_move(icon):
     print("AI turn ...")
-    time.sleep(1.5)
     best_score = -10000
     move = None
     for i in range(9):
@@ -96,11 +95,12 @@ def check_winner():
 
 while True:
     print_board()
-    ai_move('O')
+    player_move('X')
     print_board()
     if check_winner() != None:
         break
-    player_move('X')
+    ai_move('O')
+    time.sleep(1.5)
     print_board()
     if check_winner() != None:
         break
